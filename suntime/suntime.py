@@ -136,7 +136,8 @@ class Sun:
             UT += time_zone.utcoffset(at_date).total_seconds() / 3600
 
         # 7c. rounding and impose range bounds
-        UT = round(UT, 2)
+        # dsmirnov: turn off rounding to get exact time
+        #UT = round(UT, 2)
         if is_rise_time:
             UT = self._force_range(UT, 24)
 
