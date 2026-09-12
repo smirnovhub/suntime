@@ -146,7 +146,9 @@ class Sun:
         # relative to the requested solar date; western sunsets can occur on
         # the following UTC date, while eastern sunrises can occur on the
         # previous UTC date.
-        UT = round(UT, 2)
+
+        # dsmirnov: turn off rounding to get exact time
+        #UT = round(UT, 2)
         UT = self._force_range(UT, 24)
         utc_day_offset = -math.floor((UT + self.lngHour) / 24)
 
